@@ -40,17 +40,14 @@ public class UserRepository {
             @Override
             public void onResponse(Call<List<User>> call, Response<List<User>> response) {
                 if (response.isSuccessful()) {
-                    Log.i("response", "onResponse: " + response.body());
                     callback.onSuccess(response.body());
                 } else {
-                    Log.i("failure", "onResponse: " + response);
                     callback.onFailure("Error: " + response.message());
                 }
             }
 
             @Override
             public void onFailure(Call<List<User>> call, Throwable t) {
-                Log.i("onfailure", "onResponse: " + t.getMessage());
                 callback.onFailure("Error: " + t.getMessage());
             }
         });
