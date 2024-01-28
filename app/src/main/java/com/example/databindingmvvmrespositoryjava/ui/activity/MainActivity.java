@@ -31,6 +31,14 @@ public class MainActivity extends AppCompatActivity {
         binding.recyclerView.setAdapter(adapter);
 
         // Observe changes in user list
-        viewModel.getUserList().observe(this, users -> adapter.setUserList(users));
+        /*viewModel.getUserList().observe(this, new Observer<List<User>>() {
+            @Override
+            public void onChanged(List<User> users) {
+                adapter.setUserList(users);
+            }
+        });*/
+
+//        viewModel.getUserList().observe(this, users -> adapter.setUserList(users)); // same functionality, but used lambda expression
+        viewModel.getUserList().observe(this, adapter::setUserList); // more concise code
     }
 }
