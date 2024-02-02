@@ -1,7 +1,5 @@
 package com.example.databindingmvvmrespositoryjava.data.repository;
 
-import android.util.Log;
-
 import com.example.databindingmvvmrespositoryjava.data.api.ApiService;
 import com.example.databindingmvvmrespositoryjava.data.model.User;
 
@@ -34,7 +32,7 @@ public class UserRepository {
     }
 
     public void getUsers(UserCallback callback) {
-        // Perform API call using Retrofit
+
         Call<List<User>> call = apiService.getUsers();
         call.enqueue(new Callback<List<User>>() {
             @Override

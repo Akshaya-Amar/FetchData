@@ -3,9 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
         <variable
-            name="userData"
+            name="user"
             type="com.example.databindingmvvmrespositoryjava.data.model.User" />
 
     </data>
@@ -24,27 +23,29 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
+                android:id="@+id/linear_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{userData.name, default=name}"
+                    android:text="@{user.name, default=name}"
                     android:textSize="24sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{userData.email, default=email}"
+                    android:text="@{user.email, default=email}"
                     android:textSize="20sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{userData.address.street, default=address}"
+                    android:text="@{user.address.street, default=address}"
                     android:textSize="18sp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
